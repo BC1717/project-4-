@@ -1,0 +1,72 @@
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package project4;
+import java.util.Scanner;  // Import the Scanner class
+/**
+ *
+ * @author Admin
+ */
+public class HealthApplication {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       
+       
+        
+        
+        
+        
+         Scanner KeyInput = new Scanner(System.in);  // Create a Scanner object
+         System.out.println("Enter your FirstName");
+         String Fname = KeyInput.nextLine();
+          
+         System.out.println("Enter your LastName");
+         String Lname = KeyInput.nextLine();
+          
+         
+         System.out.println("Enter your Gender");
+         String GEN = KeyInput.nextLine();
+        
+        
+         System.out.println("Enter your Birthday Day");
+        
+         int day = KeyInput.nextInt();
+          
+         System.out.println("Enter your Birthday Month");
+        
+         int month = KeyInput.nextInt();
+         
+         System.out.println("Enter your Birthday Year");
+        
+         int year = KeyInput.nextInt();
+          
+       
+         HealthProfile patient = new HealthProfile(Fname ,Lname,GEN ,day ,month ,year);
+           int yourAge = patient.Age(year);
+         
+          double PBMI =  patient.BMI(year, month);
+          String GetBMIvalue = patient.getBMIValue(GEN);
+         
+            System.out.println("\n-------------------------------\n");
+            System.out.println("patient Firstname: "+ patient.getFirstName());
+            System.out.println("patient LastName: "+patient.getLastName());
+            System.out.println("gender: "+patient.getGender());
+            System.out.println("age: "+yourAge);
+            System.out.println("BMI: "+ PBMI + " BMI value is " +  GetBMIvalue );
+            System.out.println("");
+            System.out.println("\n-------------------------------\n");
+            System.out.println("BMI VALUES");
+            System.out.println("Underweight : less than 18.5");
+            System.out.println("Normal:       between 18.5 and 24.9");
+            System.out.println("Overweight:   between 25 and 29.9");
+            System.out.println("Obese:        30 or greater");
+            
+        // TODO code application logic here
+    }
+    
+}
